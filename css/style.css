@@ -15,6 +15,12 @@
     background: linear-gradient(to top, var(--pink-bool) 80%, var(--green-bool) 50%);
 }
 
+.clearfix {
+    content: " ";
+    display: table;
+    clear: both
+}
+
 /* Container */
 
 .container {
@@ -32,4 +38,39 @@
     width: 80%;
     height: 40em;
     background: red;
+}
+
+/* /Box */
+
+.col-left {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--grey-bool);
+    width: 40%;
+    height: 4em;
+}
+
+.avatar,
+.actions{
+    display: flex;
+    align-items: center;
+    
+}
+
+.avatar > img {
+    width: auto;
+    height: 4em;
+    border-radius: 50%;
+}
+
+.avatar > *,
+.actions > *{
+    margin-right: 2em;
 }
