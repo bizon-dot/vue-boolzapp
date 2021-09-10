@@ -1,16 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+
 :root {
     --green-bool: rgb(0, 150, 136);
     --pink-bool: rgb(217, 219, 212);
     --grey-bool: rgb(234, 234, 234);
+    --grey-icon: rgb(177, 177, 177);
     --blue-bool: rgb(142, 218, 252);
 
 }
 
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
+/* Background */
 
 .bg-gradient {
     background: linear-gradient(to top, var(--pink-bool) 80%, var(--green-bool) 50%);
@@ -29,6 +39,7 @@
     clear: both
 }
 
+/* /Background */
 
 a{
     text-decoration: none;
@@ -81,8 +92,9 @@ a{
 
 .avatar > img {
     width: auto;
-    height: 4em;
+    height: 3.5em;
     border-radius: 50%;
+    margin-left: 0.5em;
 }
 
 .avatar > *,
@@ -90,12 +102,33 @@ a{
     margin-right: 2em;
 }
 
-.notification{
+.actions > * {
+        color: var(--grey-icon);    
+}
+
+.notification
+{
     display: flex;
     align-items:center;
     width: 40%;
     height: 4em;
  }
+ 
+ .search {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    height: 3em;
+ }
+
+ .search > input {
+     width: 90%;
+     height: 80%;
+     margin-top: 0.4em;
+     
+     
+ }
+
 
 .box-icon{
     background-color: white;
@@ -123,4 +156,9 @@ a{
     font-size:0.8em;
     color: rgb(82, 122, 147);
     text-decoration: underline;
+}
+
+.input-contacts::placeholder{
+
+    
 }
