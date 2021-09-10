@@ -1,6 +1,7 @@
-:root{
+:root {
     --green-bool: rgb(0, 150, 136);
     --pink-bool: rgb(217, 219, 212);
+    --grey-bool: rgb(234, 234, 234);
 
 }
 
@@ -10,7 +11,7 @@
     box-sizing: border-box;
 }
 
-.bg-gradient{
+.bg-gradient {
     background: linear-gradient(to top, var(--pink-bool) 80%, var(--green-bool) 50%);
 }
 
@@ -19,5 +20,16 @@
 .container {
     width: 100%;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+}
+
+/* Box */
+
+.box {
+    width: 80%;
+    height: 40em;
+    background: red;
 }
