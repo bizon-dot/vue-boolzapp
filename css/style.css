@@ -2,6 +2,7 @@
     --green-bool: rgb(0, 150, 136);
     --pink-bool: rgb(217, 219, 212);
     --grey-bool: rgb(234, 234, 234);
+    --blue-bool: rgb(142, 218, 252);
 
 }
 
@@ -15,10 +16,22 @@
     background: linear-gradient(to top, var(--pink-bool) 80%, var(--green-bool) 50%);
 }
 
+.bg-grey{
+    background: var(--grey-bool);
+}
+.bg-blu{
+    background: var(--blue-bool);
+}
+
 .clearfix {
     content: " ";
     display: table;
     clear: both
+}
+
+
+a{
+    text-decoration: none;
 }
 
 /* Container */
@@ -48,14 +61,16 @@
 
 }
 
-.user {
+.user
+{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background: var(--grey-bool);
+    align-items: center;    
     width: 40%;
     height: 4em;
 }
+
+
 
 .avatar,
 .actions{
@@ -73,4 +88,39 @@
 .avatar > *,
 .actions > *{
     margin-right: 2em;
+}
+
+.notification{
+    display: flex;
+    align-items:center;
+    width: 40%;
+    height: 4em;
+ }
+
+.box-icon{
+    background-color: white;
+    display: flex;
+    align-items:center;
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.box-icon > i {
+    color:var(--blue-bool);
+    margin: 0 auto;
+    
+}
+
+.message-important{
+    font-size: 0.8em;
+    color:black;
+}
+
+.text-notification  a {
+    font-size:0.8em;
+    color: rgb(82, 122, 147);
+    text-decoration: underline;
 }
