@@ -3,6 +3,7 @@
 :root {
     --green-bool: rgb(0, 150, 136);
     --pink-bool: rgb(217, 219, 212);
+    --pink-actions-bool:rgb(243, 238, 234);
     --grey-bool: rgb(234, 234, 234);
     --grey-icon: rgb(177, 177, 177);
     --blue-bool: rgb(142, 218, 252);
@@ -20,16 +21,26 @@ body {
     box-sizing: border-box;
 
 }
+
+/* input { */
+    /* border:none; */
+    /* background-image:none; */
+    /* background-color:transparent; */
+    /* -webkit-box-shadow: none; */
+    /* -moz-box-shadow: none; */
+    /* box-shadow: none; */
+/* } */
 /* Background */
 
 .bg-gradient {
     background: linear-gradient(to top, var(--pink-bool) 80%, var(--green-bool) 50%);
 }
 
-.bg-grey{
+.bg-grey {
     background: var(--grey-bool);
 }
-.bg-blu{
+
+.bg-blu {
     background: var(--blue-bool);
 }
 
@@ -41,7 +52,19 @@ body {
 
 /* /Background */
 
-a{
+/* Outcoming message */
+
+.out-message {
+    background: green;
+}
+
+/* Incoming message */
+.in-message {
+    background: white;
+}
+
+/* Tolgo lo stile dai link */
+a {
     text-decoration: none;
 }
 
@@ -60,80 +83,93 @@ a{
 
 .box {
     width: 80%;
-    height: 40em;
+    min-height: 40em;
     background: red;
 }
 
 /* /Box */
 
-.col-left {
+/* Colonne */
+
+.col {
     display: flex;
     flex-direction: column;
+    height: auto;
 
 }
 
-.user
-{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;    
+.left {
     width: 40%;
+    float:left;
+}
+
+.right {
+    width: 60%;
+    float:left;
+}
+
+/* Colonne */
+
+/* Sezioni colonna di sinistra */
+
+.user,
+.avatar,
+.actions,
+.notification,
+.box-icon {
+    display: flex;
+    align-items: center;
+
+}
+
+.user,
+.notification,
+.actions {
     height: 4em;
 }
 
-
-
-.avatar,
-.actions{
-    display: flex;
-    align-items: center;
-    
+.contacts {
+    height: 29em;
 }
 
-.avatar > img {
+.user {
+    justify-content: space-between;
+}
+
+.avatar>img {
     width: auto;
     height: 3.5em;
     border-radius: 50%;
     margin-left: 0.5em;
 }
 
-.avatar > *,
-.actions > *{
+.avatar>*,
+.actions>* {
     margin-right: 2em;
 }
 
-.actions > * {
-        color: var(--grey-icon);    
+.actions>* {
+    color: var(--grey-icon);
 }
 
-.notification
-{
-    display: flex;
-    align-items:center;
-    width: 40%;
-    height: 4em;
- }
- 
- .search {
+.search {
     display: flex;
     justify-content: center;
-    width: 40%;
     height: 3em;
- }
+}
 
- .search > input {
-     width: 90%;
-     height: 80%;
-     margin-top: 0.4em;
-     
-     
- }
+.search>input {
+    width: 90%;
+    height: 80%;
+    margin-top: 0.4em;
+    border:none;
+    box-shadow: none;
+    background-color:transparent;
+}
 
 
-.box-icon{
+.box-icon {
     background-color: white;
-    display: flex;
-    align-items:center;
     height: 2em;
     width: 2em;
     border-radius: 50%;
@@ -141,24 +177,64 @@ a{
     margin-right: 1em;
 }
 
-.box-icon > i {
-    color:var(--blue-bool);
+.box-icon>i {
+    color: var(--blue-bool);
     margin: 0 auto;
-    
+
 }
 
-.message-important{
+.message-important {
     font-size: 0.8em;
-    color:black;
+    color: black;
 }
 
-.text-notification  a {
-    font-size:0.8em;
+.text-notification a {
+    font-size: 0.8em;
     color: rgb(82, 122, 147);
     text-decoration: underline;
 }
 
-.input-contacts::placeholder{
+.contacts ul {
+    list-style: none;
+}
 
-    
+.contacts li {
+    border-top: 1px solid lightgrey;
+    padding: 0.5em;
+}
+
+ul.users>li:last-of-type {
+    border-bottom: 1px solid lightgrey;
+
+}
+
+/* Sezioni colonna di sinistra */
+
+/* Sezioni colonna di destra */
+
+.chat{
+    min-height: 32em;
+    background-image: url("../img/mine.jpg");
+}
+
+.actions-chat{
+    height: 4em;
+    background-color: var(--pink-actions-bool);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.actions-chat .emoticons,
+.actions-chat .send-message,
+.actions-chat .vocal-message{
+        padding: 1em;
+}
+
+.actions-chat .send-message input{
+    border:none;
+    box-shadow: none;
+    background-color:transparent;
+    width: 100%;
+    height: 80%;
 }
