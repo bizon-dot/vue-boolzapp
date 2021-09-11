@@ -12,7 +12,7 @@
 </head>
 <body>
     <!-- Container -->
-    <div class="container bg-gradient">
+    <div class="container bg-gradient" id="root">
         <!-- Box: contacts + chat -->
             <div class="box">
                 <!-- Col-left: user + notification + search + contacts  -->
@@ -61,7 +61,15 @@
                      </div>
                      <!-- Search -->
                      <!-- Contacts -->
-                     <div class="contacts">
+                     <div class="contacts bg-grey">
+                        <ul class="users">
+                            <li v-for="contact in contacts">
+                                <div class="avatar">
+                                    <img :src= "`img/avatar` + contact.avatar + `.jpg`" alt="" srcset="">
+                                    <span> {{contact.name}} </span>
+                                </div>
+                            </li>
+                          </ul>
 
                      </div>
                      <!-- /Contacts -->
