@@ -63,8 +63,8 @@
                      <!-- Contacts -->
                      <div class="contacts bg-grey">
                         <ul class="users">
-                            <li v-for="contact in contacts">
-                                <div class="avatar">
+                            <li v-for="(contact, index) in contacts">
+                                <div class="avatar" :id="index" :data="contact.name" @click="select($event)">
                                     <img :src= "`img/avatar` + contact.avatar + `.jpg`" alt="" srcset="">
                                     <span> {{contact.name}} </span>
                                 </div>
@@ -82,7 +82,7 @@
                     <div class="user bg-grey">
                         <div class="avatar">
                             <img src="img/avatar_1.jpg" alt="" srcset="">
-                            <span>Michele</span>    
+                            <span>{{contacts[indexCurrentUser].name}}</span>    
                         </div>
                         <div class="actions">
                             <div class="status">

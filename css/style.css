@@ -235,6 +235,8 @@ ul.users>li:last-of-type {
     border:none;
     box-shadow: none;
     background-color:transparent;
-    width: 100%;
-    height: 80%;
+    background-color: white;
+    width: 40em;
+    height: 2.5em;
+    border-radius: 2%;
 }
