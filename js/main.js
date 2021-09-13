@@ -105,15 +105,7 @@ let app = new Vue({
         
 
             
-    methods: {
-        select: function(event) {
-            targetId = event.currentTarget.id;
-          
-            indexCurrentUser = targetId;
-            return indexCurrentUser;
-        },
-          
-    }
+    
             
 
 })

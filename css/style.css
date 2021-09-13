@@ -136,6 +136,10 @@ a {
     justify-content: space-between;
 }
 
+.user:hover{
+    background-color: lightgray;
+}
+
 .avatar>img {
     width: auto;
     height: 3.5em;
@@ -239,4 +243,18 @@ ul.users>li:last-of-type {
     width: 40em;
     height: 2.5em;
     border-radius: 2%;
+}
+
+/* Chat */
+
+.m-sent{
+    float:left;
+    width:40%;
+    padding: 20px;
+}
+
+.m-received{
+    float:right;
+    width:40%;
+    padding: 20px;
 }

@@ -63,7 +63,7 @@
                      <!-- Contacts -->
                      <div class="contacts bg-grey">
                         <ul class="users">
-                            <li v-for="(contact, index) in contacts">
+                            <li class="user" v-for="(contact, index) in contacts">
                                 <div class="avatar" :id="index" :data="contact.name" v-on:click="indexCurrentUser = index">
                                     <img :src= "`img/avatar` + contact.avatar + `.jpg`" alt="" srcset="">
                                     <span> {{contact.name}} </span>
@@ -105,6 +105,12 @@
                     <!-- /Contact -->
                     <!-- Chat -->
                     <div class="chat">
+                        <div class="m-sent" style="float:left">
+                                rr
+                        </div>
+                        <div class="m-received" style="float:right">
+                                    gg
+                        </div>
 
                     </div>
                     <!-- Chat -->
