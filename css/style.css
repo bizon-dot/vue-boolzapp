@@ -44,11 +44,11 @@ body {
     background: var(--blue-bool);
 }
 
-.clearfix {
-    content: " ";
+.clearfix::after {
+    content: "";
+    clear: both;
     display: table;
-    clear: both
-}
+  }
 
 /* /Background */
 
@@ -250,7 +250,7 @@ ul.users>li:last-of-type {
 .m-sent{
     float:left;
     width:40%;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .m-received{

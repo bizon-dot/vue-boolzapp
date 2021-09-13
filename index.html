@@ -12,7 +12,7 @@
 </head>
 <body>
     <!-- Container -->
-    <div class="container bg-gradient" id="root">
+    <div class="container bg-gradient clearfix" id="root">
         <!-- Box: contacts + chat -->
             <div class="box">
                 <!-- Col-left: user + notification + search + contacts  -->
@@ -63,8 +63,8 @@
                      <!-- Contacts -->
                      <div class="contacts bg-grey">
                         <ul class="users">
-                            <li class="user" v-for="(contact, index) in contacts">
-                                <div class="avatar" :id="index" :data="contact.name" v-on:click="indexCurrentUser = index">
+                            <li class="user" v-for="(contact, index) in contacts"  v-on:click="indexCurrentUser = index">
+                                <div class="avatar" :id="index" :data="contact.name">
                                     <img :src= "`img/avatar` + contact.avatar + `.jpg`" alt="" srcset="">
                                     <span> {{contact.name}} </span>
                                 </div>
@@ -104,12 +104,13 @@
                     </div>
                     <!-- /Contact -->
                     <!-- Chat -->
-                    <div class="chat">
-                        <div class="m-sent" style="float:left">
-                                rr
+                    <div class="chat clearfix"  >
+                        <div class="m-sent" style="float:left" v-for="message in contacts[indexCurrentUser].messages">
+                            <!-- {{ contacts[indexCurrentUser].messages[0] }} -->
+                            {{message.message}}
                         </div>
                         <div class="m-received" style="float:right">
-                                    gg
+                                 
                         </div>
 
                     </div>
