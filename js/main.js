@@ -13,7 +13,6 @@
 
 
 
-
 let app = new Vue({
     el: "#root",
     data: {
@@ -104,16 +103,16 @@ let app = new Vue({
     },
  
         
-  /*  data: {
-       contacts: contacts,
-       user: user
-   }, */
+
             
     methods: {
         select: function(event) {
             targetId = event.currentTarget.id;
-            console.log(targetId); // returns 'foo'
-        }
+          
+            indexCurrentUser = targetId;
+            return indexCurrentUser;
+        },
+          
     }
             
 

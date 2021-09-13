@@ -64,7 +64,7 @@
                      <div class="contacts bg-grey">
                         <ul class="users">
                             <li v-for="(contact, index) in contacts">
-                                <div class="avatar" :id="index" :data="contact.name" @click="select($event)">
+                                <div class="avatar" :id="index" :data="contact.name" v-on:click="indexCurrentUser = index">
                                     <img :src= "`img/avatar` + contact.avatar + `.jpg`" alt="" srcset="">
                                     <span> {{contact.name}} </span>
                                 </div>
@@ -81,8 +81,8 @@
                           <!-- User -->
                     <div class="user bg-grey">
                         <div class="avatar">
-                            <img src="img/avatar_1.jpg" alt="" srcset="">
-                            <span>{{contacts[indexCurrentUser].name}}</span>    
+                            <img :src="`img/avatar_` + (indexCurrentUser + 1) + `.jpg`"  alt="" srcset="">
+                            <span>{{ contacts[indexCurrentUser].name }}</span>    
                         </div>
                         <div class="actions">
                             <div class="status">
@@ -135,5 +135,6 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <!-- MainJs -->
     <script src="js/main.js"></script>
+ 
 </body>
 </html>
