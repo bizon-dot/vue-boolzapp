@@ -1,88 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- MyCss -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <!-- Container -->
     <div class="container bg-gradient clearfix" id="root">
         <!-- Box: contacts + chat -->
-            <div class="box">
-                <!-- Col-left: user + notification + search + contacts  -->
-                <div class="col left">
+        <div class="box">
+            <!-- Col-left: user + notification + search + contacts  -->
+            <div class="col left">
+                <!-- User -->
+                <div class="user bg-grey">
+                    <div class="avatar">
+                        <img src="img/avatar_1.jpg" alt="" srcset="">
+                        <span>Richard Stallman</span>
+                    </div>
+                    <div class="actions">
+                        <div class="status">
+                            <i class="fas fa-circle-notch"></i>
+
+                        </div>
+
+                        <div class="new-chat">
+                            <i class="far fa-comment-alt"></i>
+                        </div>
+
+                        <div class="advance-actions">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- User -->
+                <!-- Notification -->
+                <div class="notification bg-blu">
+                    <div class="box-icon">
+                        <i class="fas fa-bell-slash"></i>
+
+                    </div>
+                    <div class="text-notification">
+                        <p class="message-important">Ricevi notifiche di nuovi messaggi</p>
+                        <a href="#">Attiva notifiche desktop</a>
+
+                    </div>
+
+                </div>
+                <!-- /Notification -->
+                <!-- Search -->
+                <div class="search bg-grey">
+
+                    <input type="text" placeholder="&#32&#xf002 Cerca o inizia una nuova chat"
+                        class="fas fa-search input-contacts">
+
+                </div>
+                <!-- Search -->
+                <!-- Contacts -->
+                <div class="contacts bg-grey">
+                    <ul class="users">
+                        <li class="user" v-for="(contact, index) in contacts" v-on:click="indexCurrentUser = index">
+                            <div class="avatar" :id="index" :data="contact.name">
+                                <img :src="`img/avatar` + contact.avatar + `.jpg`" alt="" srcset="">
+                                <span> {{contact.name}} </span>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- /Contacts -->
+            </div>
+            <!--/ Col-left: user + notification + search + contacts  -->
+            <div class="col right">
+                <!-- Contact -->
+                <div class="contact">
                     <!-- User -->
                     <div class="user bg-grey">
                         <div class="avatar">
-                            <img src="img/avatar_1.jpg" alt="" srcset="">
-                            <span>Richard  Stallman</span>    
-                        </div>
-                        <div class="actions">
-                            <div class="status">
-                                <i class="fas fa-circle-notch"></i>
-
-                            </div>
-
-                            <div class="new-chat">
-                                <i class="far fa-comment-alt"></i>
-                            </div>
-                            
-                            <div class="advance-actions">
-                                <i class="fas fa-ellipsis-v"></i>
-                            </div>
-                        </div>
-                    </div>
-                     <!-- User -->
-                     <!-- Notification -->
-                     <div class="notification bg-blu">
-                         <div class="box-icon">
-                            <i class="fas fa-bell-slash"></i>
-                           
-                         </div>
-                         <div class="text-notification">
-                             <p class="message-important">Ricevi notifiche di nuovi messaggi</p>
-                             <a href="#">Attiva notifiche desktop</a>
-                             
-                         </div>
-
-                     </div>
-                     <!-- /Notification -->
-                     <!-- Search -->
-                     <div class="search bg-grey">
-                        
-                        <input type="text" placeholder="&#32&#xf002 Cerca o inizia una nuova chat" class="fas fa-search input-contacts">
-
-                     </div>
-                     <!-- Search -->
-                     <!-- Contacts -->
-                     <div class="contacts bg-grey">
-                        <ul class="users">
-                            <li class="user" v-for="(contact, index) in contacts"  v-on:click="indexCurrentUser = index">
-                                <div class="avatar" :id="index" :data="contact.name">
-                                    <img :src= "`img/avatar` + contact.avatar + `.jpg`" alt="" srcset="">
-                                    <span> {{contact.name}} </span>
-                                </div>
-                            </li>
-                          </ul>
-
-                     </div>
-                     <!-- /Contacts -->
-                </div>
-                <!--/ Col-left: user + notification + search + contacts  -->
-                <div class="col right">
-                    <!-- Contact -->
-                    <div class="contact">
-                          <!-- User -->
-                    <div class="user bg-grey">
-                        <div class="avatar">
-                            <img :src="`img/avatar_` + (indexCurrentUser + 1) + `.jpg`"  alt="" srcset="">
-                            <span>{{ contacts[indexCurrentUser].name }}</span>    
+                            <img :src="`img/avatar_` + (indexCurrentUser + 1) + `.jpg`" alt="" srcset="">
+                            <span>{{ contacts[indexCurrentUser].name }}</span>
                         </div>
                         <div class="actions">
                             <div class="status">
@@ -93,48 +98,53 @@
                             <div class="new-chat">
                                 <i class="fas fa-paperclip"></i>
                             </div>
-                            
+
                             <div class="advance-actions">
                                 <i class="fas fa-ellipsis-v"></i>
                             </div>
                         </div>
                     </div>
-                     <!-- User -->
+                    <!-- User -->
 
-                    </div>
-                    <!-- /Contact -->
-                    <!-- Chat -->
-                    <div class="chat clearfix"  >
-                        <div class="m-sent" style="float:left" v-for="message in contacts[indexCurrentUser].messages">
-                            <!-- {{ contacts[indexCurrentUser].messages[0] }} -->
+                </div>
+                <!-- /Contact -->
+                <!-- Chat -->
+                <div class="chat clearfix">
+                    <div class="m-sent" style="float:left" >
+                        <!-- {{ contacts[indexCurrentUser].messages[0] }} -->
+                        <div class="message" v-for="message in contacts[indexCurrentUser].messages" v-if="message.status == `sent`">
                             {{message.message}}
                         </div>
-                        <div class="m-received" style="float:right">
-                                 
-                        </div>
-
                     </div>
-                    <!-- Chat -->
-                    <!-- Actions -->
-                    <div class="actions-chat">
-                        <div class="emoticons" >
-                            <i class="far fa-smile"></i>
+                    <div class="m-received" style="float:right">
+                        <div class="message" v-for="message in contacts[indexCurrentUser].messages" v-if="message.status == `received`">
+                            {{message.message}}
+                          
                         </div>
-                       
-                        <div class="send-message">
-                            <input type="text" placeholder=" Scrivi un messaggio" >
-
-                        </div>
-
-                        <div class="vocal-message">
-                            <i class="fas fa-microphone"></i>
-                        </div>
-
                     </div>
-                    <!-- /Actions -->
+
                 </div>
+                <!-- Chat -->
+                <!-- Actions -->
+                <div class="actions-chat">
+                    <div class="emoticons">
+                        <i class="far fa-smile"></i>
+                    </div>
+
+                    <div class="send-message">
+                        <input type="text" placeholder=" Scrivi un messaggio">
+
+                    </div>
+
+                    <div class="vocal-message">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+
+                </div>
+                <!-- /Actions -->
             </div>
-            <!-- Box: contact + chat -->
+        </div>
+        <!-- Box: contact + chat -->
     </div>
     <!-- /Container -->
 
@@ -142,6 +152,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <!-- MainJs -->
     <script src="js/main.js"></script>
- 
+
 </body>
+
 </html>
