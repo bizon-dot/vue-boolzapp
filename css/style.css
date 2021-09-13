@@ -250,12 +250,27 @@ ul.users>li:last-of-type {
 .m-sent{
     float:left;
     width:40%;
+    
 
 }
 
 .m-received{
     float:right;
     width:40%;
+}
 
+.m-sent > .message{
+    background-color: white;
 
+}
+
+.m-received > .message{
+    background-color: green;
+   
+}
+
+.message{
+    border: 1px solid grey;
+    margin-top:10px;
+    width:60%;
 }
