@@ -17,6 +17,7 @@ let app = new Vue({
     el: "#root",
     data: {
         indexCurrentUser: 0,
+        outMessage : '',
         contacts: [
             {
                 name: 'Michele',
@@ -101,6 +102,15 @@ let app = new Vue({
             },
         ]
     },
+
+    methods: {
+        send(outMessage){
+           
+                console.log(outMessage);
+            
+
+        }
+    }
  
         
 

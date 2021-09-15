@@ -270,7 +270,9 @@ ul.users>li:last-of-type {
 }
 
 .message{
-    border: 1px solid grey;
+    border: 0;
+    border-radius: 20%;
+    padding:0.2em;
     margin-top:10px;
     width:60%;
 }

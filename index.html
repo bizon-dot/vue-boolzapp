@@ -116,12 +116,22 @@
                             {{message.message}}
                         </div>
                     </div>
+
+                    
                     <div class="m-received" style="float:right">
                         <div class="message" v-for="message in contacts[indexCurrentUser].messages" v-if="message.status == `received`">
                             {{message.message}}
                           
                         </div>
                     </div>
+
+                    <div class="m-sent" style="float:left" >
+           
+                        <div class="message"  v-if="(outMessage)">
+                            {{outMessage}}
+                        </div>
+                    </div>
+                    
 
                 </div>
                 <!-- Chat -->
@@ -132,7 +142,7 @@
                     </div>
 
                     <div class="send-message">
-                        <input type="text" placeholder=" Scrivi un messaggio">
+                        <input type="text" v-model="outMessage" placeholder=" Scrivi un messaggio" @keyup.enter="send(outMessage)">
 
                     </div>
 
