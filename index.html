@@ -75,7 +75,6 @@
                             </div>
                         </li>
                     </ul>
-
                 </div>
                 <!-- /Contacts -->
             </div>
@@ -105,7 +104,6 @@
                         </div>
                     </div>
                     <!-- User -->
-
                 </div>
                 <!-- /Contact -->
                 <!-- Chat -->
@@ -114,9 +112,7 @@
                         <div class="message" v-for="message in contacts[indexCurrentUser].messages" v-if="message.status == `sent`">
                             {{message.message}}
                         </div>
-                    </div>
-
-                    
+                    </div>                    
                     <div class="m-received" style="float:right">
                         <div class="message" v-for="message in contacts[indexCurrentUser].messages" v-if="message.status == `received`">
                             {{message.message}}
