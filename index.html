@@ -60,7 +60,7 @@
                 <!-- Search -->
                 <div class="search bg-grey">
 
-                    <input type="text" placeholder="&#32&#xf002 Cerca o inizia una nuova chat"
+                    <input type="text" v-model="search" placeholder="&#32&#xf002 Cerca o inizia una nuova chat"
                         class="fas fa-search input-contacts">
 
                 </div>
@@ -68,7 +68,7 @@
                 <!-- Contacts -->
                 <div class="contacts bg-grey">
                     <ul class="users">
-                        <li class="user" v-for="(contact, index) in contacts" v-on:click="indexCurrentUser = index">
+                        <li class="user" v-for="(contact, index) in filtered" v-on:click="indexCurrentUser = index">
                             <div class="avatar" :id="index" :data="contact.name">
                                 <img :src="`img/avatar` + contact.avatar + `.jpg`" alt="" srcset="">
                                 <span> {{contact.name}} </span>
@@ -111,7 +111,6 @@
                 <!-- Chat -->
                 <div class="chat clearfix">
                     <div class="m-sent" style="float:left" >
-                        <!-- {{ contacts[indexCurrentUser].messages[0] }} -->
                         <div class="message" v-for="message in contacts[indexCurrentUser].messages" v-if="message.status == `sent`">
                             {{message.message}}
                         </div>
@@ -124,15 +123,6 @@
                           
                         </div>
                     </div>
-
-                    <div class="m-sent" style="float:left" >
-           
-                        <div class="message"  v-if="(outMessage)">
-                            {{outMessage}}
-                        </div>
-                    </div>
-                    
-
                 </div>
                 <!-- Chat -->
                 <!-- Actions -->
@@ -157,6 +147,9 @@
         <!-- Box: contact + chat -->
     </div>
     <!-- /Container -->
+
+    <!-- Day.js -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 
     <!-- VueJs -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>

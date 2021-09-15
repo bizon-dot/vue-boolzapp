@@ -265,14 +265,14 @@ ul.users>li:last-of-type {
 }
 
 .m-received > .message{
-    background-color: green;
+    background-color:#d5f9ba;
    
 }
 
 .message{
     border: 0;
-    border-radius: 20%;
-    padding:0.2em;
+    border-radius: 10%;
+    padding:0.5em;
     margin-top:10px;
     width:60%;
 }

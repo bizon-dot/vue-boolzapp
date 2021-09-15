@@ -17,6 +17,7 @@ let app = new Vue({
     data: {
         indexCurrentUser: 0,
         outMessage: '',
+        search: '',
         contacts: [{
                 name: 'Michele',
                 avatar: '_1',
@@ -100,6 +101,13 @@ let app = new Vue({
         ]
     },
 
+    computed: {
+        filtered() {
+            return this.contacts.filter(contact => {
+                return contact.name.toLowerCase().includes(this.search.toLowerCase())
+            })
+    }
+    },
     methods: {
         send() {
             let currentUser = this.contacts[this.indexCurrentUser];
@@ -117,9 +125,12 @@ let app = new Vue({
                     status: `received`
                 });
             }, 1000);
-
-
         }
+        /* filtered() {
+                return this.contacts.filter(contact => {
+                    return contact.name.toLowerCase().includes(this.search.toLowerCase())
+                })
+        } */
     }
 
 
