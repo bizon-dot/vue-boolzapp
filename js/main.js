@@ -104,7 +104,7 @@ let app = new Vue({
     computed: {
         filtered() {
             return this.contacts.filter(contact => {
-                return contact.name.toLowerCase().includes(this.search.toLowerCase())
+                return contact.name.toLowerCase().startsWith(this.search.toLowerCase())
             })
     }
     },
@@ -126,11 +126,7 @@ let app = new Vue({
                 });
             }, 1000);
         }
-        /* filtered() {
-                return this.contacts.filter(contact => {
-                    return contact.name.toLowerCase().includes(this.search.toLowerCase())
-                })
-        } */
+
     }
 
 

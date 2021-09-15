@@ -274,5 +274,6 @@ ul.users>li:last-of-type {
     border-radius: 10%;
     padding:0.5em;
     margin-top:10px;
+    margin-left:10px;
     width:60%;
 }
